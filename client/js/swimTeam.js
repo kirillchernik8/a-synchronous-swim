@@ -2,11 +2,21 @@ const SwimTeam = {
 
   // direction, start and max all need to match the CSS
   direction: 'left',
-  coords: { top: 100, left: 100 },
-  max: { top: 0, left: 0, bottom: 295, right: 240 },
+  coords: {
+    top: 100,
+    left: 100
+  },
+  max: {
+    top: 0,
+    left: 0,
+    bottom: 295,
+    right: 240
+  },
 
   move: (direction) => {
-    if (!direction) { return; }
+    if (!direction) {
+      return;
+    }
     console.log(`Lets go: ${direction}`);
 
     // set the swim-team's direction
@@ -32,27 +42,27 @@ const SwimTeam = {
     // calculate what the new position is for the swim-team is
     // but don't let the swim-team get outside the max bounds!
     switch (direction) {
-    case 'up':
-      if (SwimTeam.coords.top > SwimTeam.max.top) {
-        SwimTeam.coords.top -= 5;
-      }
-      break;
-    case 'down':
-      if (SwimTeam.coords.top < SwimTeam.max.bottom) {
-        SwimTeam.coords.top += 5;
-      }
-      break;
-    case 'left':
-      if (SwimTeam.coords.left > SwimTeam.max.left) {
-        SwimTeam.coords.left -= 5;
-      }
-      break;
-    case 'right':
-      if (SwimTeam.coords.left < SwimTeam.max.right) {
-        SwimTeam.coords.left += 5;
-      }
-      break;
-    } 
+      case 'up':
+        if (SwimTeam.coords.top > SwimTeam.max.top) {
+          SwimTeam.coords.top -= 5;
+        }
+        break;
+      case 'down':
+        if (SwimTeam.coords.top < SwimTeam.max.bottom) {
+          SwimTeam.coords.top += 5;
+        }
+        break;
+      case 'left':
+        if (SwimTeam.coords.left > SwimTeam.max.left) {
+          SwimTeam.coords.left -= 5;
+        }
+        break;
+      case 'right':
+        if (SwimTeam.coords.left < SwimTeam.max.right) {
+          SwimTeam.coords.left += 5;
+        }
+        break;
+    }
   }
 
 };
